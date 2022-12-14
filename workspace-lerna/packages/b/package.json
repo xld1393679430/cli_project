@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://gitlab.com/1393679430/cli_project/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
