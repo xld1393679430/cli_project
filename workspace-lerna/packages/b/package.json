@@ -25,8 +25,7 @@
     "url": "https://gitlab.com/1393679430/cli_project/issues"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com/"
+    "access": "public"
   },
-  "gitHead": "43eb464e8cad21c41f2a581ec59f90b331b76f05"
+  "gitHead": "e4654b3f35014756503f35cbee67ab173b472e53"
 }
