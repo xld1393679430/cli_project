@@ -1,0 +1,35 @@
+{
+  "name": "@ld_xu/test-lerna-cli",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "ld_xu <ld_xu@trip.com>",
+  "homepage": "https://gitlab.com/1393679430/cli_project#readme",
+  "license": "ISC",
+  "main": "dist/cli.js",
+  "module": "dist/cli.module.js",
+  "bin": {
+    "lerna-test-cli": "bin/cli.mjs"
+  },
+  "directories": {
+    "lib": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/cli.test.js"
+  },
+  "dependencies": {
+    "yargs": "^17.6.2"
+  },
+  "type": "module",
+  "bugs": {
+    "url": "https://gitlab.com/1393679430/cli_project/issues"
+  }
+}
