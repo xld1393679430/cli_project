@@ -1,5 +1,5 @@
 {
-  "name": "@ld_xu/test-lerna-cli",
+  "name": "@xld-cli-dev/test-lerna-cli",
   "version": "0.0.10",
   "description": "> TODO: description",
   "author": "ld_xu <ld_xu@trip.com>",
@@ -36,5 +36,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e4654b3f35014756503f35cbee67ab173b472e53"
+  "gitHead": "20a8a920b1392250f805e81022d6315808880938"
 }
