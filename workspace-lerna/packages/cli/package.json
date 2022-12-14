@@ -27,6 +27,8 @@
     "test": "node ./__tests__/cli.test.js"
   },
   "dependencies": {
+    "@xld-cli-dev/test-lerna-a": "^0.0.11",
+    "@xld-cli-dev/test-lerna-b": "^0.0.11",
     "yargs": "^17.6.2"
   },
   "type": "module",

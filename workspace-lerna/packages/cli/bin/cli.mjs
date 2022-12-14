@@ -2,8 +2,8 @@
 'use strict';
 
 import cli from '../src/cli.mjs'
-import logA from '@ld_xu/test-lerna-a'
-import logB from '@ld_xu/test-lerna-b'
+import logA from '@xld-cli-dev/test-lerna-a'
+import logB from '@xld-cli-dev/test-lerna-b'
 
 cli().parse(process.argv.slice(2));
 
