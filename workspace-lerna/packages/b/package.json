@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git",
+    "directory": "packages/b"
   },
   "scripts": {
     "test": "node ./__tests__/b.test.js"
@@ -26,5 +27,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "0ecc25d35e5df55319f0050c950087a49e874c28"
+  "gitHead": "a4d4e7d610ce04876343f967c8f64062ba592c8e"
 }
