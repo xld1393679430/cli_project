@@ -7,6 +7,6 @@ import logB from '@ld_xu/test-lerna-b'
 
 cli().parse(process.argv.slice(2));
 
-logA()
+logA();
 
 logB();
