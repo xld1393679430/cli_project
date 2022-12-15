@@ -1,0 +1,30 @@
+{
+  "name": "@lerna-cli-xld/utils",
+  "version": "0.0.0",
+  "description": "@lerna-cli-xld utils",
+  "author": "ld_xu <ld_xu@trip.com>",
+  "homepage": "https://gitlab.com/1393679430/cli_project#readme",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/utils.test.js"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/1393679430/cli_project/issues"
+  },
+  "type": "module",
+  "dependencies": {
+    "npmlog": "^7.0.1"
+  }
+}
