@@ -19,17 +19,17 @@ const ADD_TEMPLATE = [
     name: "Vue项目模板",
     value: "vue-template",
     npmName: "@xld_template/vue-template",
-    version: "1.0.0",
+    version: "latest",
   },
   {
     name: "React项目模板",
     value: "react-template",
     npmName: "@xld_template/react-template",
-    version: "1.0.1",
+    version: "latest",
   },
 ];
 
-const TEMP_HOME = ".cli-immoc";
+const TEMP_HOME = ".lerna-cli-xld";
 
 // 获取创建类型
 function getAddType() {
@@ -46,11 +46,11 @@ function getAddName(name) {
     message: "请输入项目名称",
     defaultValue: name,
     validate(v) {
-        if (v.length > 0) {
-          return true
-        }
-        return "项目名称必须输入"
-    }
+      if (v.length > 0) {
+        return true;
+      }
+      return "项目名称必须输入";
+    },
   });
 }
 
@@ -63,23 +63,47 @@ function getAddTemplate() {
 }
 
 // 模板安装的目录
-function makeTargetPath(name) {
-  return path.resolve(`${homedir()}/Project-${name.toUpperCase()}`, "addTemplate");
+function makeTargetPath() {
+  return path.resolve(`${homedir()}/${TEMP_HOME}`, "addTemplate");
 }
 
 export default async function createTemplate(name, opts) {
-  const addType = await getAddType();
-  if (addType === ADD_TYPE_PROJECT) {
-    const addName = await getAddName(name);
-    const addTemplate = await getAddTemplate();
-    const selectedTemplate = ADD_TEMPLATE.find((_) => _.value === addTemplate);
+  const { type = null, template = null } = opts;
+  let addType; // 项目类型
+  let addName; // 项目名称
+  let addTemplate; // 项目模板
+  if (type) {
+    addType = type;
+  } else {
+    addType = await getAddType();
+  }
 
-    const targetPath = makeTargetPath(name);
+  if (addType === ADD_TYPE_PROJECT) {
+    if (name) {
+      addName = name;
+    } else {
+      addName = await getAddName(name);
+    }
+
+    if (template) {
+      addTemplate = ADD_TEMPLATE.find((tp) => tp.value === template);
+    } else {
+      const tp = await getAddTemplate();
+      addTemplate = ADD_TEMPLATE.find((_) => _.value === tp);
+    }
+
+    if (!addTemplate) {
+      throw new Error("创建的项目模板不存在");
+    }
+
+    const targetPath = makeTargetPath();
     return {
+      targetPath,
       type: addType,
       name: addName,
-      targetPath,
-      template: selectedTemplate,
+      template: addTemplate,
     };
+  } else {
+    throw new Error("创建的项目类型不支持");
   }
 }

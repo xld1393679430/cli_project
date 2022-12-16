@@ -12,7 +12,6 @@ const pkg = fse.readJSONSync(pkgPath);
 const LOWEST_NODE_VERSION = "14.0.0"; // 限定node最低版本
 
 function checkNodeVersion() {
-  console.log("--checkNodeVersion---");
   if (!semver.gte(process.version, LOWEST_NODE_VERSION)) {
     throw new Error(`Node需要按照最低${chalk.red(LOWEST_NODE_VERSION)}版本`);
   }

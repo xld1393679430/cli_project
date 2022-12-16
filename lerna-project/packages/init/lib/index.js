@@ -2,7 +2,13 @@ import Command from "@lerna-cli-xld/command";
 import { log } from "@lerna-cli-xld/utils";
 import createTemplate from "./createTemplate.js";
 import downloadTemplate from './downloadTemplate.js'
+import installTemplate from './installTemplate.js'
 
+/**
+ * examples:
+ *  1, lerna-cli-xld init aa -t project -tp vue-template -f
+ *  2, lerna-cli-xld init
+ */
 class InitCommand extends Command {
   get command() {
     return "init [name]";
@@ -13,7 +19,11 @@ class InitCommand extends Command {
   }
 
   get options() {
-    return [["-f, --force", "是否强制更新", false]];
+    return [
+      ["-f, --force", "是否强制更新", false],
+      ["-t, --type <type>", "项目类型（project/page）"],
+      ["-tp, --template <template>", "模板名称"]
+    ];
   }
 
   async action([name, opts]) {
@@ -21,8 +31,9 @@ class InitCommand extends Command {
     // 1,选择项目模板，生成项目信息
     const selectedTemplate = await createTemplate(name, opts);
     // 2, 项目模板下载
-    downloadTemplate(selectedTemplate)
-    // 3,
+    await downloadTemplate(selectedTemplate)
+    // 3, 安装项目模板至项目目录
+    await installTemplate(selectedTemplate, opts)
     // 4,
   }
 }

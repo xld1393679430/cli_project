@@ -44,6 +44,6 @@ cli
       alias: "n",
     }),
       (argv) => {
-        console.log(argv);
+        // console.log(argv);
       };
   }).argv;

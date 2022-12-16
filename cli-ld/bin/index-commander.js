@@ -19,7 +19,6 @@ clone
   .description("clone命令的描述")
   .option("-f, --force", "是否强制克隆")
   .action((source, destination, cmdObj) => {
-    console.log("Do clone", source, destination, cmdObj);
   });
 
   // 这里cli-ld install [name] 相当于 vue [name]
@@ -36,7 +35,6 @@ service
   .command("start [port]")
   .description("start service at port")
   .action((port) => {
-    console.log("do service start", port);
   });
 program.addCommand(service);
 
@@ -48,7 +46,7 @@ program
     options: "options for command",
   })
   .action((cmd, options) => {
-    console.log("<cmd> [options]:", cmd, options);
+    // console.log("<cmd> [options]:", cmd, options);
   });
 
 program.parse(process.argv);

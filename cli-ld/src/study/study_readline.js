@@ -5,8 +5,6 @@ const rl = readline.createInterface({
 	output: process.stdout,
 })
 
-rl.question("Your name: ", (q) => {
-	console.log(q);
-
+rl.question("Your name: ", () => {
 	rl.close();
 })

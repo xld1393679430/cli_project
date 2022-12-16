@@ -43,11 +43,9 @@ class Command {
   }
 
   preAction() {
-    console.log("--preAction--");
   }
 
   postAction() {
-    console.log("--postAction--");
   }
 }
 

@@ -7,9 +7,6 @@ const command = argv[2];
 
 const options = argv.slice(3);
 
-console.log("----argv----", command, argv);
-
-
 if (options.length > 1) {
   let [option, param] = options;
   option = option?.replace(/--/, "");
@@ -18,18 +15,18 @@ if (options.length > 1) {
     if (lib[command]) {
       lib[command]({ option, param });
     } else {
-      console.log("无效的命令");
+      // console.log("无效的命令");
     }
   } else {
-    console.log("请输入命令");
+    // console.log("请输入命令");
   }
 }
 
 // 实现参数解析 --version 或者 -v
 if (command.startsWith('--') || command.startsWith('-')) {
 	const globalOption = command.replace(/--|-/g, '')
-	console.log("---globalOption---", globalOption)
+	// console.log("---globalOption---", globalOption)
 	if (['version', 'v', 'V'].includes(globalOption)) {
-		console.log("1.0.0")
+		// console.log("1.0.0")
 	}
 }

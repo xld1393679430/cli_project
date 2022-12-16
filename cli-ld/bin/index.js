@@ -4,5 +4,4 @@
 
 // console.log(chalk.blue("Hello world!"));
 
-console.log("\x1B[31m%s", "your name:");
-console.log("");
+// console.log("\x1B[31m%s", "your name:");

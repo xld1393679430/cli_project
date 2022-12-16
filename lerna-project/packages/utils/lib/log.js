@@ -8,5 +8,5 @@ if (isDebug()) {
 }
 
 // log.heading = ":::lerna-cli-xld:::"
-
+log.addLevel("success", 2000, { fg: 'red' })
 export default log;
