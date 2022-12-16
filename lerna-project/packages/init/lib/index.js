@@ -1,5 +1,6 @@
 import Command from "@lerna-cli-xld/command";
 import { log } from "@lerna-cli-xld/utils";
+import createTemplate from './createTemplate.js'
 
 class InitCommand extends Command {
   get command() {
@@ -16,11 +17,11 @@ class InitCommand extends Command {
 
   action([name, opts]) {
     log.info("init action", name, opts);
-    new Promise((resolve) => {
-      resolve()
-    }).then(() => {
-      throw new Error("Error from Promise")
-    })
+    // 1,选择项目模板，生成项目信息
+    createTemplate(name, opts)
+    // 2, 
+    // 3,
+    // 4,
   }
 }
 
