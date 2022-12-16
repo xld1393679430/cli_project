@@ -27,6 +27,12 @@ const ADD_TEMPLATE = [
     npmName: "@xld_template/react-template",
     version: "latest",
   },
+  {
+    name: "Vue-Element-Admin项目模板",
+    value: "vue-element-admin-template",
+    npmName: "@xld_template/vue-element-admin-template",
+    version: "latest",
+  },
 ];
 
 const TEMP_HOME = ".lerna-cli-xld";
