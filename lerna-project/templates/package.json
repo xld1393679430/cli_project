@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "publish:react": "cd react-template && npx lerna publish",
-    "publish:vue": "cd vue-template && npx lerna publish"
+    "publish:react": "cd react-template && npm publish",
+    "publish:vue": "cd vue-template && npm publish"
   },
   "keywords": [],
   "author": "",
