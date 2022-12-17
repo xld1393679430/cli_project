@@ -57,7 +57,7 @@ function makeTargetPath() {
 async function getTemplateFormAPT() {
   try {
     const data = await request({
-      url: "/project/template",
+      url: "/v1/project",
       method: "get",
     });
     return data;
