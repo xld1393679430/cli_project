@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld/command",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "common command package",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",

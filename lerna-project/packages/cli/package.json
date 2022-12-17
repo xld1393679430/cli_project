@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld/cli",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "lerna-cli-xld",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -29,8 +29,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@lerna-cli-xld/init": "^0.0.1",
-    "@lerna-cli-xld/utils": "^0.0.1",
+    "@lerna-cli-xld/init": "^0.0.2",
+    "@lerna-cli-xld/utils": "^0.0.2",
     "chalk": "^5.2.0",
     "commander": "^9.4.1",
     "dirname-filename-esm": "^1.1.1",
