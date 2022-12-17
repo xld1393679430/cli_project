@@ -4,10 +4,14 @@ import fse from "fs-extra";
 import ora from "ora";
 import ejs from "ejs";
 import glob from "glob";
-import { log, printErrorLog } from "@lerna-cli-xld/utils";
+import { log, printErrorLog, makeList, makeInput } from "@lerna-cli-xld/utils";
 
 function getCacheFilePath(targetPath, template) {
   return path.resolve(targetPath, "node_modules", template.npmName, "template");
+}
+
+function getPluginsFilePath(targetPath, template) {
+  return path.resolve(targetPath, "node_modules", template.npmName, "plugins", "index.js");
 }
 
 function copyFile(targetPath, template, installDir) {
@@ -26,41 +30,51 @@ function copyFile(targetPath, template, installDir) {
   }
 }
 
-function ejsRender(installDir, name) {
+async function ejsRender(targetPath, template, installDir, options) {
+  const { ejsIgnore = [] } = template;
+  const { name } = options;
+  let data = {};
+
+  // 执行插件
+  const pluginsPath = getPluginsFilePath(targetPath, template);
+  if (pathExistsSync(pluginsPath)) {
+    const pluginFn = (await import(pluginsPath)).default;
+    const api = {
+      makeInput,
+      makeList,
+    };
+    data = await pluginFn(api);
+  }
+
+  const ejsData = {
+    data: {
+      name,
+      ...data,
+    },
+  };
   glob(
     "**",
     {
       cwd: installDir,
       nodir: true,
-      ignore: [
-        "**/public/**",
-        "**/node_modules/**"
-      ],
+      ignore: [...ejsIgnore, "**/node_modules/**"],
     },
     (err, files) => {
       files.forEach((file) => {
         const filePath = path.join(installDir, file);
-        ejs.renderFile(
-          filePath,
-          {
-            data: {
-              name,
-            }
-          },
-          (err, result) => {
-            if (!err) {
-              fse.writeFileSync(filePath, result);
-            } else {
-              printErrorLog(err);
-            }
+        ejs.renderFile(filePath, ejsData, (err, result) => {
+          if (!err) {
+            fse.writeFileSync(filePath, result);
+          } else {
+            printErrorLog(err);
           }
-        );
+        });
       });
     }
   );
 }
 
-export default function installTemplate(selectedTemplate, opts) {
+export default async function installTemplate(selectedTemplate, opts) {
   const { targetPath, name, template } = selectedTemplate;
   const { force = false } = opts;
   const rootDir = process.cwd();
@@ -81,5 +95,5 @@ export default function installTemplate(selectedTemplate, opts) {
 
   copyFile(targetPath, template, installDir);
 
-  ejsRender(installDir, name);
+  await ejsRender(targetPath, template, installDir, { name });
 }
