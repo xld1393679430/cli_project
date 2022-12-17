@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld/init",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "init command",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -25,8 +25,8 @@
   },
   "type": "module",
   "dependencies": {
-    "@lerna-cli-xld/command": "^0.0.0",
-    "@lerna-cli-xld/utils": "^0.0.0",
+    "@lerna-cli-xld/command": "^0.0.1",
+    "@lerna-cli-xld/utils": "^0.0.1",
     "ejs": "^3.1.8",
     "execa": "^6.1.0",
     "fs-extra": "^11.1.0",
