@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "@lerna-cli-xld utils",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -24,6 +24,9 @@
     "url": "https://gitlab.com/1393679430/cli_project/issues"
   },
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "axios": "^1.2.1",
     "inquirer": "^9.1.4",
