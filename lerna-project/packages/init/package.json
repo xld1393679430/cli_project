@@ -1,5 +1,5 @@
 {
-  "name": "@lerna-cli-xld/init",
+  "name": "@lerna-cli-xld-v2/init",
   "version": "0.0.2",
   "description": "init command",
   "author": "ld_xu <ld_xu@trip.com>",
@@ -28,8 +28,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@lerna-cli-xld/command": "^0.0.2",
-    "@lerna-cli-xld/utils": "^0.0.2",
+    "@lerna-cli-xld-v2/command": "^0.0.2",
+    "@lerna-cli-xld-v2/utils": "^0.0.2",
     "ejs": "^3.1.8",
     "execa": "^6.1.0",
     "fs-extra": "^11.1.0",

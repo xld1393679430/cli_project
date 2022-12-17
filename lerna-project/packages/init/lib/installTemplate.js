@@ -4,7 +4,7 @@ import fse from "fs-extra";
 import ora from "ora";
 import ejs from "ejs";
 import glob from "glob";
-import { log, printErrorLog, makeList, makeInput } from "@lerna-cli-xld/utils";
+import { log, printErrorLog, makeList, makeInput } from "@lerna-cli-xld-v2/utils";
 
 function getCacheFilePath(targetPath, template) {
   return path.resolve(targetPath, "node_modules", template.npmName, "template");

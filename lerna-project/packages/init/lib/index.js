@@ -1,5 +1,5 @@
-import Command from "@lerna-cli-xld/command";
-import { log } from "@lerna-cli-xld/utils";
+import Command from "@lerna-cli-xld-v2/command";
+import { log } from "@lerna-cli-xld-v2/utils";
 import createTemplate from "./createTemplate.js";
 import downloadTemplate from './downloadTemplate.js'
 import installTemplate from './installTemplate.js'

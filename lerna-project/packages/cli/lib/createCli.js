@@ -4,7 +4,7 @@ import semver from "semver";
 import chalk from "chalk";
 import { program } from "commander";
 import { dirname } from "dirname-filename-esm";
-import { log } from "@lerna-cli-xld/utils";
+import { log } from "@lerna-cli-xld-v2/utils";
 
 const __dirname = dirname(import.meta);
 const pkgPath = path.resolve(__dirname, "../package.json");

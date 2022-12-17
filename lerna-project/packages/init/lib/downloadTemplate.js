@@ -3,7 +3,7 @@ import { pathExistsSync } from "path-exists";
 import fse from "fs-extra";
 import ora from "ora";
 import { execa } from 'execa'
-import { printErrorLog, log } from "@lerna-cli-xld/utils";
+import { printErrorLog, log } from "@lerna-cli-xld-v2/utils";
 
 function getCacheDir(targetPath) {
   return path.resolve(targetPath, "node_modules");

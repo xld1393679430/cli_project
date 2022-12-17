@@ -1,5 +1,5 @@
 {
-  "name": "@lerna-cli-xld/command",
+  "name": "@lerna-cli-xld-v2/command",
   "version": "0.0.2",
   "description": "common command package",
   "author": "ld_xu <ld_xu@trip.com>",

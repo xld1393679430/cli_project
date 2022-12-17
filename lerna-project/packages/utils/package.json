@@ -1,7 +1,7 @@
 {
-  "name": "@lerna-cli-xld/utils",
+  "name": "@lerna-cli-xld-v2/utils",
   "version": "0.0.2",
-  "description": "@lerna-cli-xld utils",
+  "description": "@lerna-cli-xld-v2 utils",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
   "license": "ISC",

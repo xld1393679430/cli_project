@@ -2,7 +2,7 @@
 
 import importLocal from "import-local";
 import { fileURLToPath } from 'node:url'
-import { log } from "@lerna-cli-xld/utils";
+import { log } from "@lerna-cli-xld-v2/utils";
 import entry from "../lib/index.js";
 
 const url = import.meta.url

@@ -1,13 +1,13 @@
 {
-  "name": "@lerna-cli-xld/cli",
+  "name": "@lerna-cli-xld-v2/cli",
   "version": "0.0.2",
-  "description": "lerna-cli-xld",
+  "description": "lerna-cli-xld-v2",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
   "license": "ISC",
   "main": "lib/index.js",
   "bin": {
-    "lerna-cli-xld": "bin/cli.js"
+    "lerna-cli-xld-v2": "bin/cli.js"
   },
   "directories": {
     "lib": "lib",
@@ -32,8 +32,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@lerna-cli-xld/init": "^0.0.2",
-    "@lerna-cli-xld/utils": "^0.0.2",
+    "@lerna-cli-xld-v2/init": "^0.0.2",
+    "@lerna-cli-xld-v2/utils": "^0.0.2",
     "chalk": "^5.2.0",
     "commander": "^9.4.1",
     "dirname-filename-esm": "^1.1.1",

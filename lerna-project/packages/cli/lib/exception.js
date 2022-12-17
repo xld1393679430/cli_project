@@ -1,4 +1,4 @@
-import { printErrorLog } from "@lerna-cli-xld/utils";
+import { printErrorLog } from "@lerna-cli-xld-v2/utils";
 
 process.on("uncaughtException", (e) => printErrorLog(e, "uncaughtException"));
 

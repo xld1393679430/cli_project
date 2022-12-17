@@ -1,6 +1,6 @@
 import { homedir } from "node:os";
 import path from "node:path";
-import { printErrorLog, request, makeList, makeInput } from "@lerna-cli-xld/utils";
+import { printErrorLog, request, makeList, makeInput } from "@lerna-cli-xld-v2/utils";
 
 const ADD_TYPE_PROJECT = "project";
 const ADD_TYPE_PAGE = "page";

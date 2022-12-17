@@ -1,4 +1,4 @@
-import creatInitCommand from "@lerna-cli-xld/init";
+import creatInitCommand from "@lerna-cli-xld-v2/init";
 import createCli from "./createCli.js";
 import "./exception.js";
 
