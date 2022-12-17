@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld-v2/init",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "init command",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git",
+    "directory": "packages/init"
   },
   "scripts": {
     "test": "node ./__tests__/init.test.js"
@@ -28,8 +29,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@lerna-cli-xld-v2/command": "^0.0.2",
-    "@lerna-cli-xld-v2/utils": "^0.0.2",
+    "@lerna-cli-xld-v2/command": "^0.0.3",
+    "@lerna-cli-xld-v2/utils": "^0.0.3",
     "ejs": "^3.1.8",
     "execa": "^6.1.0",
     "fs-extra": "^11.1.0",

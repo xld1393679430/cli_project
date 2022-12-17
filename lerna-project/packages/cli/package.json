@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld-v2/cli",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "lerna-cli-xld-v2",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -19,7 +19,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git",
+    "directory": "packages/cli"
   },
   "scripts": {
     "test": "node ./__tests__/cli.test.js"
@@ -32,8 +33,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@lerna-cli-xld-v2/init": "^0.0.2",
-    "@lerna-cli-xld-v2/utils": "^0.0.2",
+    "@lerna-cli-xld-v2/init": "^0.0.3",
+    "@lerna-cli-xld-v2/utils": "^0.0.3",
     "chalk": "^5.2.0",
     "commander": "^9.4.1",
     "dirname-filename-esm": "^1.1.1",

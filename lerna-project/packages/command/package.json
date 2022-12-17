@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld-v2/command",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "common command package",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",
@@ -15,7 +15,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git"
+    "url": "git+ssh://git@gitlab.com/1393679430/cli_project.git",
+    "directory": "packages/command"
   },
   "scripts": {
     "test": "node ./__tests__/command.test.js"
