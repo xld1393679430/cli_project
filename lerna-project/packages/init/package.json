@@ -1,6 +1,6 @@
 {
   "name": "@lerna-cli-xld-v2/init",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "init command",
   "author": "ld_xu <ld_xu@trip.com>",
   "homepage": "https://gitlab.com/1393679430/cli_project#readme",

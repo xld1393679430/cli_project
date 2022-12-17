@@ -15,6 +15,28 @@ const ADD_TYPE = [
   },
 ];
 
+const ADD_TEMPLATE = [
+  {
+    name: "Vue项目模板",
+    value: "vue-template",
+    npmName: "@xld_template/vue-template",
+    version: "latest",
+    ejsIgnore: ["**/public/**"],
+  },
+  {
+    name: "React项目模板",
+    value: "react-template",
+    npmName: "@xld_template/react-template",
+    version: "latest",
+  },
+  {
+    name: "Vue-Element-Admin项目模板",
+    value: "vue-element-admin-template",
+    npmName: "@xld_template/vue-element-admin-template",
+    version: "latest",
+  },
+];
+
 const TEMP_HOME = ".lerna-cli-xld";
 
 // 获取创建类型
@@ -63,7 +85,7 @@ async function getTemplateFormAPT() {
     return data;
   } catch (error) {
     printErrorLog(error);
-    return null;
+    return ADD_TEMPLATE;
   }
 }
 
