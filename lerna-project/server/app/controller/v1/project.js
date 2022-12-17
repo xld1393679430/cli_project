@@ -27,15 +27,13 @@ class ProjectController extends Controller {
   // 项目模板查询
   async index() {
     const { ctx } = this;
-    console.log(ctx.model, 555);
     const res = await ctx.model.Project.find({});
     ctx.body = res;
   }
 
-  // 项目模板查询
+  // 根据项目模板id查询 /:id
   async show() {
     const { ctx } = this;
-    console.log(ctx.params, "---ctx");
     const id = ctx.params.id;
     const res = await ctx.model.Project.find({ value: id });
     if (res?.length) {
