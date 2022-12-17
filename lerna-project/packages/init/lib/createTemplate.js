@@ -1,6 +1,6 @@
 import { homedir } from "node:os";
 import path from "node:path";
-import { log, makeList, makeInput } from "@lerna-cli-xld/utils";
+import { printErrorLog, request, makeList, makeInput } from "@lerna-cli-xld/utils";
 
 const ADD_TYPE_PROJECT = "project";
 const ADD_TYPE_PAGE = "page";
@@ -12,26 +12,6 @@ const ADD_TYPE = [
   {
     name: "页面",
     value: ADD_TYPE_PAGE,
-  },
-];
-const ADD_TEMPLATE = [
-  {
-    name: "Vue项目模板",
-    value: "vue-template",
-    npmName: "@xld_template/vue-template",
-    version: "latest",
-  },
-  {
-    name: "React项目模板",
-    value: "react-template",
-    npmName: "@xld_template/react-template",
-    version: "latest",
-  },
-  {
-    name: "Vue-Element-Admin项目模板",
-    value: "vue-element-admin-template",
-    npmName: "@xld_template/vue-element-admin-template",
-    version: "latest",
   },
 ];
 
@@ -61,9 +41,9 @@ function getAddName(name) {
 }
 
 // 获取项目模板
-function getAddTemplate() {
+function getAddTemplate(template) {
   return makeList({
-    choices: ADD_TEMPLATE,
+    choices: template,
     message: "请选择项目模板",
   });
 }
@@ -73,7 +53,27 @@ function makeTargetPath() {
   return path.resolve(`${homedir()}/${TEMP_HOME}`, "addTemplate");
 }
 
+// 通过API获取项目模板
+async function getTemplateFormAPT() {
+  try {
+    const data = await request({
+      url: "/project/template",
+      method: "get",
+    });
+    return data;
+  } catch (error) {
+    printErrorLog(error);
+    return null;
+  }
+}
+
 export default async function createTemplate(name, opts) {
+  // 先获取项目模板
+  const ADD_TEMPLATE = await getTemplateFormAPT();
+  if (!ADD_TEMPLATE) {
+    throw new Error("项目模板不存在");
+  }
+
   const { type = null, template = null } = opts;
   let addType; // 项目类型
   let addName; // 项目名称
@@ -94,7 +94,7 @@ export default async function createTemplate(name, opts) {
     if (template) {
       addTemplate = ADD_TEMPLATE.find((tp) => tp.value === template);
     } else {
-      const tp = await getAddTemplate();
+      const tp = await getAddTemplate(ADD_TEMPLATE);
       addTemplate = ADD_TEMPLATE.find((_) => _.value === tp);
     }
 
